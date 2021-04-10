@@ -5,6 +5,7 @@ const fetchBreedDescription = (breedName, callback) => {
   request(`${URL}${breedName}`, 'utf-8', (error, response, body) => {
     if (error) {
       callback(error, null)
+      return;
     } else {
       const data = JSON.parse(body);
       if (data.length === 0) {
